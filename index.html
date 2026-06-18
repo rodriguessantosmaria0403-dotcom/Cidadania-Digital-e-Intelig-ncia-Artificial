@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania Digital e IA: Deepfakes e Desinformação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho principal da página -->
+    <header class="main-header">
+        <div class="container">
+            <h1>Cidadania Digital &amp; Inteligência Artificial</h1>
+            <p>Conscientização sobre Deepfakes e Desinformação na Escola</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal do site (Acessibilidade) -->
+    <main class="container">
+
+        <!-- Seção 1: Conceito -->
+        <section class="card" aria-labelledby="deepfakes-title">
+            <h2 id="deepfakes-title">O que são Deepfakes?</h2>
+            <p>Deepfakes são vídeos, áudios ou imagens modificados de forma realista por meio de Inteligência Artificial. Elas podem simular a voz e o rosto de pessoas reais, criando discursos e situações que nunca aconteceram.</p>
+        </section>
+
+        <!-- Seção 2: Guia de Identificação -->
+        <section class="card" aria-labelledby="identificar-title">
+            <h2 id="identificar-title">Como Identificar Mídias Manipuladas</h2>
+            <ul class="list">
+                <li><strong>Piscadas irreais:</strong> Olhos que não piscam ou piscam de forma artificial.</li>
+                <li><strong>Falhas nas bordas:</strong> Desfocagem ao redor do rosto, orelhas e cabelos.</li>
+                <li><strong>Áudio dessincronizado:</strong> Movimento dos lábios desalinhado com a fala.</li>
+                <li><strong>Iluminação estranha:</strong> Sombras e reflexos que mudam sem explicação.</li>
+            </ul>
+        </section>
+
+        <!-- Seção 3: Jogo Interativo (Uso de Form para acessibilidade) -->
+        <section class="card" aria-labelledby="quiz-title">
+            <h2 id="quiz-title">Jogo Rápido: Fato ou Fake?</h2>
+            <p>Teste suas habilidades de detecção de desinformação automatizada.</p>
+            
+            <form id="quiz-form" onsubmit="event.preventDefault();">
+                <fieldset class="quiz-fieldset">
+                    <legend id="quiz-question" class="highlight">Carregando pergunta...</legend>
+                    
+                    <div class="quiz-buttons">
+                        <button type="button" class="btn btn-success" onclick="checkAnswer(true)">Fato</button>
+                        <button type="button" class="btn btn-danger" onclick="checkAnswer(false)">Fake</button>
+                    </div>
+                </fieldset>
+                <!-- Área de feedback dinâmico -->
+                <div id="quiz-feedback" role="alert" aria-live="assertive"></div>
+            </form>
+        </section>
+
+        <!-- Seção 4: Dicas e Segurança -->
+        <section class="card" aria-labelledby="seguranca-title">
+            <h2 id="seguranca-title">Boas Práticas de Segurança Digital</h2>
+            <ul class="list">
+                <li>Nunca compartilhe notícias sem verificar a fonte original.</li>
+                <li>Utilize canais oficiais de checagem de fatos.</li>
+                <li>Desconfie de conteúdos puramente emocionais ou alarmistas.</li>
+                <li>Proteja suas redes sociais e fotos contra roubo de identidade.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Rodapé estrutural da página -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 - Projeto Escolar de Cidadania Digital. Desenvolvido exclusivamente com HTML5, CSS3 e JS Vanilla.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
