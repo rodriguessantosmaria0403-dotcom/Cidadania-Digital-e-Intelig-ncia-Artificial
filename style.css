@@ -1,9 +1,8 @@
-/* Definição do Design System através de Tokens/Variáveis Nativas */
 :root {
     --brand-primary: #0f172a;
     --brand-secondary: #2563eb;
     --brand-accent: #3b82f6;
-    --bg-main: #f8fafc;
+    --bg-main: #f1f5f9;
     --bg-card: #ffffff;
     --text-main: #334155;
     --text-muted: #64748b;
@@ -13,7 +12,6 @@
     --transition: all 0.2s ease-in-out;
 }
 
-/* Reset Moderno */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -28,60 +26,74 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Container Responsivo */
 .container {
     width: 100%;
-    max-width: 768px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* Header */
+/* Header Configurado como Grid para Alinhamento da Imagem */
 .main-header {
     background-color: var(--brand-primary);
     color: #ffffff;
-    text-align: center;
-    padding: 60px 0;
+    padding: 50px 0;
     margin-bottom: 40px;
 }
 
-.main-header h1 {
+.header-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.header-text h1 {
     font-size: 2.25rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     margin-bottom: 12px;
+    line-height: 1.2;
 }
 
-.main-header p {
-    font-size: 1.125rem;
+.header-text p {
+    font-size: 1.15rem;
     color: #94a3b8;
+    margin-bottom: 0;
 }
 
-/* Cards de Conteúdo */
+.header-image svg {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Cards */
 .card {
     background-color: var(--bg-card);
     border-radius: var(--radius);
     padding: 32px;
     margin-bottom: 32px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
     color: var(--brand-primary);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     border-bottom: 4px solid var(--brand-accent);
     display: inline-block;
 }
 
 p {
     margin-bottom: 16px;
-    color: var(--text-main);
 }
 
-/* Listas Customizadas com pseudo-elementos */
+/* Listas */
 .list {
     list-style: none;
 }
@@ -100,14 +112,14 @@ p {
     font-weight: bold;
 }
 
-/* Campo do Form / Quiz */
+/* Quiz Form */
 .quiz-fieldset {
     border: none;
     margin-top: 20px;
 }
 
 .highlight {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--brand-primary);
     margin-bottom: 24px;
@@ -121,7 +133,6 @@ p {
     margin-bottom: 24px;
 }
 
-/* Botões Nativos Customizados */
 .btn {
     flex: 1;
     padding: 16px;
@@ -138,23 +149,12 @@ p {
     transform: scale(0.98);
 }
 
-.btn-success {
-    background-color: var(--state-success);
-}
+.btn-success { background-color: var(--state-success); }
+.btn-success:hover { background-color: #15803d; }
 
-.btn-success:hover {
-    background-color: #15803d;
-}
+.btn-danger { background-color: var(--state-danger); }
+.btn-danger:hover { background-color: #b91c1c; }
 
-.btn-danger {
-    background-color: var(--state-danger);
-}
-
-.btn-danger:hover {
-    background-color: #b91c1c;
-}
-
-/* Área de Mensagens de Feedback */
 #quiz-feedback {
     border-radius: var(--radius);
     text-align: center;
@@ -162,7 +162,6 @@ p {
     transition: var(--transition);
 }
 
-/* Classes utilitárias injetadas dinamicamente via JavaScript */
 .feedback-success {
     padding: 16px;
     background-color: #f0fdf4;
@@ -177,7 +176,6 @@ p {
     border: 1px solid #fecaca;
 }
 
-/* Footer */
 .main-footer {
     text-align: center;
     padding: 40px 0;
@@ -187,20 +185,30 @@ p {
     margin-top: 60px;
 }
 
-/* Media Queries de Alta Precisão */
-@media (max-width: 640px) {
-    .main-header {
-        padding: 40px 0;
+/* Responsividade Adaptável */
+@media (max-width: 680px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
     }
     
+    .header-image svg {
+        max-width: 120px;
+    }
+
+    .main-header {
+        padding: 35px 0;
+    }
+
     .main-header h1 {
         font-size: 1.75rem;
     }
-    
+
     .card {
         padding: 24px;
     }
-    
+
     .quiz-buttons {
         flex-direction: column;
     }
